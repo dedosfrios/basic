@@ -1,0 +1,131 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: #1C1D21;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  overflow: hidden;
+  box-shadow: 0 0 50px #000;
+  transition: transform 0.5s;
+}
+main .intro {
+  height: 100vh;
+  width: 100%;
+  display: table;
+  background: #26292f;
+  background-size: cover;
+}
+main .intro h1 {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 45px;
+  color: white;
+}
+
+.nav-open main {
+  transform: scale(0.8);
+}
+.nav-open .nav-trigger span {
+  background: transparent;
+}
+.nav-open .nav-trigger span::before, .nav-open .nav-trigger span::after {
+  background: #1F2B3D;
+}
+.nav-open .nav-trigger span::before {
+  transform: rotate(-45deg);
+}
+.nav-open .nav-trigger span::after {
+  transform: rotate(45deg);
+}
+.nav-open .nav-trigger:hover span::before, .nav-open .nav-trigger:hover span::after {
+  background: #1F2B3D;
+}
+.nav-open .nav-container {
+  transform: translateX(0);
+}
+.nav-open .overlay {
+  opacity: 0.6;
+  visibility: visible;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1C1D21;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.nav-container {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 90%;
+  max-width: 460px;
+  padding: 2em 3.5em;
+  background: #F3F3F3;
+  overflow: auto;
+  transform: translateZ(0);
+  transform: translateX(100%);
+  transition: transform 0.5s;
+}
+
+.nav-trigger {
+  position: fixed;
+  z-index: 4;
+  top: 40px;
+  right: 40px;
+  height: 40px;
+  width: 44px;
+  overflow: hidden;
+  color: transparent;
+}
+.nav-trigger span, .nav-trigger span::before, .nav-trigger span::after {
+  position: absolute;
+  height: 4px;
+  width: 36px;
+  background: #999999;
+}
+.nav-trigger span {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: background 0.3s;
+}
+.nav-trigger span::after, .nav-trigger span::before {
+  content: "";
+  top: 0;
+  left: 0;
+  transition: background 0.3s, transform 0.3s;
+}
+.nav-trigger span::before {
+  transform: translateY(-12px);
+}
+.nav-trigger span::after {
+  transform: translateY(12px);
+}
+
+.nav-trigger:hover span, .nav-trigger:hover span::before, .nav-trigger:hover span::after {
+  background: white;
+}
+
+/*# sourceMappingURL=style.css.map */

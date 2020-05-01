@@ -1,0 +1,41 @@
+
+body{
+	margin:0;
+}
+.grilla{
+	display: grid;
+	width: 100vw;
+	height: 100vh;
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+
+		h1{
+		grid-column: 1 / 11;
+		grid-row: 1 / 3;
+		color:#FFFFFF;
+		background-color: #38618C;
+		padding: 20px;
+	}
+}
+
+
+
+
+@media screen and (max-width: 800px){
+	.grilla{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+
+			h1{
+			grid-column: 1 / 3;
+			grid-row: 1 / 2;
+			color:#FFFFFF;
+			background-color: #FF5964;
+			padding: 30px;
+
+		}
+	}
+
+	
+}

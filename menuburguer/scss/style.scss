@@ -1,0 +1,151 @@
+*, *::after, *::before{
+	box-sizing:border-box;
+}
+
+body{
+	font-family: sans-serif;
+	line-height: 1;
+	margin:0;
+	width: 100%;
+	height: 100%;
+	background: #1C1D21;
+
+	
+	
+}
+
+main{
+	position: relative;
+	z-index:1;
+	height: 100vh;
+	overflow: hidden;
+	box-shadow: 0 0 50px #000;
+	transition: transform .5s;	
+	.intro{
+		height: 100vh;
+		width: 100%;
+		display: table;
+		background: #26292f;
+		background-size: cover;
+		h1{
+			display:table-cell;
+			vertical-align: middle;
+			text-align: center;
+			font-size: 45px;
+			color:white;
+		}
+	}
+}
+
+
+.nav-open{
+	main{
+		transform: scale(.8);
+	}
+
+	.nav-trigger{
+		span{
+			background: transparent;
+		}
+		span::before, span::after{
+			background: #1F2B3D;
+		}
+		span::before{
+			transform: rotate(-45deg);
+		}
+		span::after{
+			transform: rotate(45deg);
+		}
+	}
+	.nav-trigger:hover{
+		span::before, span::after{
+			background: #1F2B3D;
+		}	
+	}
+
+	.nav-container{
+		transform: translateX(0);
+	}
+	.overlay{
+		opacity: .6;
+		visibility: visible;
+	}
+}
+
+.overlay{
+	position:fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #1C1D21;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .5s, visibility .5s;
+}
+	
+
+.nav-container{
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width:90%;
+	max-width: 460px;
+	padding: 2em 3.5em;
+	background: #F3F3F3;
+	overflow:auto;
+	transform: translateZ(0);
+	transform: translateX(100%);
+	transition: transform .5s
+
+}
+
+.nav-trigger{
+	position: fixed;
+	z-index: 4;
+	top: 40px;
+	right: 40px;
+	height: 40px;
+	width: 44px;
+
+	overflow: hidden;
+	color: transparent;
+	// white-space: nowrap;
+	// text-indent: 100%;
+
+	
+	span, span::before, span::after{
+		position: absolute;
+		height: 4px;
+		width: 36px;
+		background: #999999;
+	}
+	span{
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		transition: background .3s;
+	}
+	span::after, span::before{
+		content:'';
+		top: 0;
+		left: 0;
+		transition: background .3s, transform .3s;
+	}
+	span::before{
+		transform: translateY(-12px);
+	}
+	span::after{
+		transform: translateY(12px);
+
+	}
+}
+
+.nav-trigger:hover{
+	span, span::before, span::after{
+		background: white;
+	}
+}
