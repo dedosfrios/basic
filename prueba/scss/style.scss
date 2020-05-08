@@ -53,6 +53,7 @@ header{
 
 	section{
 		padding:3em;
+		line-height: 1.5em;
 
 		h1, h2, .read-btn{
 			text-transform: uppercase;
@@ -60,7 +61,106 @@ header{
 		}
 
 		h2{
-			font-size: 
+			font-size: 1.5em;
+		}
+
+		.read-btn{
+			text-decoration: none;
+			color:black;
+			font-weight: bold;
+			padding-left: 1em;
+		}
+
+		.primary{
+			padding: 1.5em;
+			border: 1px solid gray;
+			display: inline-block;
+			margin-top: 3em;
+			margin-left: -3em;
+		}
+	}
+
+	section.hero{
+		padding-top: 10em;
+		background: lightgrey;
+
+		p{
+			margin-top: 1.2em;
+			width: 70%;
+		}
+
+		h1{
+			font-size: 2.5em;
+		}
+
+	}
+	
+	section.sidebar, section.subscribe{
+		font-size: .9rem;
+		line-height: 1.6em;
+		
+	}
+
+	section.sidebar{
+		background: #FED200;
+
+		p{
+			margin-top: .8em;
+		}
+		.read-btn{
+			margin-top: 2em;
+			display: block;
+		}
+	}
+	section.subscribe{
+		p{
+			margin: .8em 0 1em 0;
+		}
+		input{
+			width:100%;
+			padding: 1em;
+
+		}
+		button{
+			margin-top: 1em;
+			width: 100%;
+			background: black;
+			padding: 1em;
+			color: white;
+			border: none;
 		}
 	}
 }
+
+@media only screen and (min-width: 768px){
+	html{
+		font-size: 18px;
+	}
+}
+
+@media only screen and (min-width: 1020px){
+	header{
+		background: none;
+	}
+	.container{
+		grid-template-columns: 70% auto;
+		grid-template-rows: 60% auto;
+		grid-template-areas: 
+			"hero featured"
+			"hero subscribe";
+		height: 100vh;
+	}
+
+	section.hero{
+		grid-area: hero;
+	}
+
+	section{
+		display: grid;
+		grid-template-rows: auto;
+		align-items: center;
+	}
+
+}
+
+

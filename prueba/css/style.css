@@ -1,17 +1,142 @@
-/* Error: Expected expression.
- *    ,
- * 63 |             font-size: 
- *    |                        ^
- *    '
- *   scss/style.scss 63:15  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Expected expression.\a    \2577 \a 63 \2502              font-size: \a    \2502                         ^\a    \2575 \a   scss/style.scss 63:15  root stylesheet";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: helvetica;
+}
+
+header {
+  position: absolute;
+  padding: 1em;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: white;
+}
+header a {
+  text-decoration: none;
+  color: black;
+}
+header a.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+header nav ul li a {
+  padding: 1em;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto;
+}
+.container section {
+  padding: 3em;
+  line-height: 1.5em;
+}
+.container section h1, .container section h2, .container section .read-btn {
+  text-transform: uppercase;
+  margin: 0;
+}
+.container section h2 {
+  font-size: 1.5em;
+}
+.container section .read-btn {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  padding-left: 1em;
+}
+.container section .primary {
+  padding: 1.5em;
+  border: 1px solid gray;
+  display: inline-block;
+  margin-top: 3em;
+  margin-left: -3em;
+}
+.container section.hero {
+  padding-top: 10em;
+  background: lightgrey;
+}
+.container section.hero p {
+  margin-top: 1.2em;
+  width: 70%;
+}
+.container section.hero h1 {
+  font-size: 2.5em;
+}
+.container section.sidebar, .container section.subscribe {
+  font-size: 0.9rem;
+  line-height: 1.6em;
+}
+.container section.sidebar {
+  background: #FED200;
+}
+.container section.sidebar p {
+  margin-top: 0.8em;
+}
+.container section.sidebar .read-btn {
+  margin-top: 2em;
+  display: block;
+}
+.container section.subscribe p {
+  margin: 0.8em 0 1em 0;
+}
+.container section.subscribe input {
+  width: 100%;
+  padding: 1em;
+}
+.container section.subscribe button {
+  margin-top: 1em;
+  width: 100%;
+  background: black;
+  padding: 1em;
+  color: white;
+  border: none;
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 1020px) {
+  header {
+    background: none;
+  }
+
+  .container {
+    grid-template-columns: 70% auto;
+    grid-template-rows: 60% auto;
+    grid-template-areas: "hero featured" "hero subscribe";
+    height: 100vh;
+  }
+
+  section.hero {
+    grid-area: hero;
+  }
+
+  section {
+    display: grid;
+    grid-template-rows: auto;
+    align-items: center;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
