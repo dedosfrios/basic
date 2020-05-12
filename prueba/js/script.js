@@ -1,3 +1,4 @@
-let headline = document.querySelectorAll("h1")[0];
+let tl = gsap.timeline();
 
-headline.style.textTransform="uppercase";
+tl.from("section",{ duration:1, scale:0.5, opacity:0, stagger:0.5})
+  // .from("h1, h2", { duration:1, opacity:0)
