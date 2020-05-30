@@ -1,1 +1,3 @@
-node.js
+const math = require('./math.js');
+
+math.divide()
