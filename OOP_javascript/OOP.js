@@ -64,3 +64,4 @@ console.log(karoll.didSheFellInLove())
 // console.log(sadith)
 
 //El objeto windows se crea cuando se renderiza el DOM tree, el 
+

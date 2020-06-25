@@ -35,7 +35,7 @@ const GENTE_QUE_CONOSCO = {
     }
  }
 
-
+te
 
 //for adding a method to the .prototype of the object which was created using Object.create you must use __proto__
 GENTE_QUE_CONOSCO.__proto__.saluditos = function (){
@@ -152,3 +152,6 @@ Object.create
         a method for set the prototype of the object resulted of executing this method
 
 */
+
+
+
